@@ -3,8 +3,8 @@ import Recipe from "./Recipe.js";
 import { useState, useEffect } from "react";
 
 const App = () => {
-  // const APP_ID = "a4c97862";
-  // const APP_KEY = "11babaf0152cec3e55e3e4b688794c31";
+  const APP_ID = "a4c97862";
+  const APP_KEY = "11babaf0152cec3e55e3e4b688794c31";
   // const exampleReq = `https://api.edamam.com/api/recipes/v2/0123456789abcdef0123456789abcdef?app_id=${APP_ID}&app_key=${APP_KEY}&type=public`;
 
   const [recipes, setRecipes] = useState([]);
@@ -17,7 +17,7 @@ const App = () => {
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=a4c97862&app_key=11babaf0152cec3e55e3e4b688794c31`
+      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = await response.json();
     setRecipes(data.hits);
